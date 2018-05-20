@@ -8,6 +8,7 @@ const port = process.env.PORT || 8080;
 
 // __dirname: directory name for the webpack config file (needs ABSOLUTE path)
 // dev.contentBase: where files are served from
+// module.rules.use: Order matters (LAST to FIRST)
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
@@ -18,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.css$/, exclude: /node_modules/, use: ['style-loader', 'css-loader'] },
+      { test: /\.scss$/, exclude: /node_modules/, use: [ 'style-loader', 'css-loader', 'sass-loader' ] },
     ],
   },
   devServer: {
