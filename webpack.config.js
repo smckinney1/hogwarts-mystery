@@ -1,7 +1,12 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// __dirname: directory name for the webpack config file
+// We are setting an environmental variable
+// To run from custom port, run command port=[any other port] npm start
+const port = process.env.PORT || 8080;
+// console.log(process.env);
+
+// __dirname: directory name for the webpack config file (needs ABSOLUTE path)
 // dev.contentBase: where files are served from
 module.exports = {
   mode: 'development',
@@ -13,11 +18,10 @@ module.exports = {
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      // { test: /\.html$/, exclude: /node_modules/, loader: 'file-loader' },
     ],
   },
   devServer: {
-    // contentBase: './build',
+    port,
   },
   plugins: [
     new HtmlWebpackPlugin({
