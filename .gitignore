@@ -17,4 +17,8 @@ node_modules/
 # next.js build output
 .next
 
+# build folder
 dist/
+
+# OS files
+.DS_Store
