@@ -6,15 +6,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const port = process.env.PORT || 8080;
 // console.log(process.env);
 
+// We're setting the MODE in package.json
 // __dirname: directory name for the webpack config file (needs ABSOLUTE path)
 // dev.contentBase: where files are served from
 // module.rules.use: Order matters (LAST to FIRST)
 module.exports = {
-  mode: 'development',
+  // mode: 'development',
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: resolve(__dirname, 'build'),
+    path: resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
