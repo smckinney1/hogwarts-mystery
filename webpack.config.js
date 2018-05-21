@@ -26,9 +26,10 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    port,
-  },
+  // Couldn't get this working; it'll throw an error that "dist" file was removed if attempt to do npm run dev
+  // devServer: {
+  //   port,
+  // },
   plugins: [
     new CleanWebpackPlugin( 'dist', {} ),
     new MiniCssExtractPlugin({
