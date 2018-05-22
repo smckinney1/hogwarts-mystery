@@ -5,7 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // We are setting an environmental variable
 // To run from custom port, run command port=[any other port] npm start
-const port = process.env.PORT || 8080;
+// const port = process.env.PORT || 8080;
 // console.log(process.env);
 
 // __dirname: directory name for the webpack config file (needs ABSOLUTE path)
@@ -40,4 +40,4 @@ module.exports = {
       hash: true,
     }),
   ],
-}
+};
